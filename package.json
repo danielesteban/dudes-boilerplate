@@ -8,7 +8,7 @@
     "start": "npm run build -- -w"
   },
   "dependencies": {
-    "dudes": "^0.1.10"
+    "dudes": "^0.1.11"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
