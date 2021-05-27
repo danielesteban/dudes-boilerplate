@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -7,6 +8,12 @@ import serve from 'rollup-plugin-serve';
 import { terser } from 'rollup-plugin-terser';
 
 const outputPath = path.resolve(__dirname, 'dist');
+
+const cname = (domain) => ({
+  writeBundle() {
+    fs.writeFileSync(path.join(outputPath, 'CNAME'), domain);
+  },
+});
 
 export default {
   input: path.join(__dirname, 'main.js'),
@@ -41,6 +48,7 @@ export default {
       }),
       livereload(outputPath),
     ] : [
+      cname('dudes-boilerplate.gatunes.com'),
       terser(),
     ]),
   ],
