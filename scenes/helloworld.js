@@ -6,8 +6,15 @@ class HelloWorld extends Gameplay {
     super(scene, {
       lightToggle: true,
       rainToggle: true,
+      explosions: true,
+      projectiles: true,
       dudes: {
         spawn: { count: 16 },
+        onContact: (contact) => {
+          if (this.projectiles.destroyOnContact(contact)) {
+            this.dudes.hitOnContact(contact);
+          }
+        },
       },
       world: {
         width: 400,
@@ -96,6 +103,20 @@ class HelloWorld extends Gameplay {
             .addScaledVector(hit.normal, isRemoving ? -0.25 : 0.25)
             .floor()
         );
+      }
+      const isFiring = isXR ? (
+        hand && buttons.triggerDown
+      ) : (
+        buttons.tertiaryDown
+      );
+      if (isFiring) {
+        this.spawnProjectile(
+          raycaster.ray.origin
+            .clone()
+            .addScaledVector(raycaster.ray.direction, 0.5),
+          raycaster.ray.direction.clone().multiplyScalar(24)
+        );
+        return;
       }
     });
   }
