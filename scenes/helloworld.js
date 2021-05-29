@@ -2,7 +2,7 @@ import { Gameplay } from 'dudes';
 import { Color } from 'three';
 
 class HelloWorld extends Gameplay {
-  constructor(scene) {
+  constructor(scene, options) {
     super(scene, {
       lightToggle: true,
       rainToggle: true,
@@ -10,9 +10,9 @@ class HelloWorld extends Gameplay {
         spawn: { count: 16 },
       },
       world: {
-        width: 256,
-        height: 32,
-        depth: 256,
+        width: 400,
+        height: 96,
+        depth: 400,
         seaLevel: 6,
         generator: (x, y, z) => {
           const r = Math.sqrt((x - 128.5) ** 2 + ((y - 16.5) * 2) ** 2 + (z - 128.5) ** 2);
@@ -27,7 +27,8 @@ class HelloWorld extends Gameplay {
             };
           }
           return false;
-        }
+        },
+        server: options.server,
       },
     });
 
