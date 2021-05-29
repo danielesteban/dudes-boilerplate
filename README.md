@@ -15,13 +15,9 @@ cd dudes-boilerplate
 npm install
 # start the dev environment:
 npm start
-# open http://localhost:8080/ in your browser
 ```
 
-#### Multiplayer
+Open in your browser:
 
-```bash
-# start the server
-npm run server
-# open http://localhost:8080/multiplayer in your browser
-```
+ * http://localhost:8080/ for the [helloworld.js](scenes/helloworld.js) scene
+ * http://localhost:8080/multiplayer  for the [multiplayer.js](scenes/multiplayer.js) scene

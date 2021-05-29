@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "server": "dudes-server",
-    "start": "npm run build -- -w"
+    "start": "run-p server watch",
+    "watch": "npm run build -- -w"
   },
   "dependencies": {
     "dudes": "^0.1.18"
@@ -14,7 +15,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
-    "dudes-server": "^0.1.19",
+    "dudes-server": "^0.1.20",
+    "npm-run-all": "^4.1.5",
     "rollup": "^2.50.4",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-livereload": "^2.0.0",
