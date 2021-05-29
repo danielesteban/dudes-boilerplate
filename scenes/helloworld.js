@@ -15,7 +15,7 @@ class HelloWorld extends Gameplay {
         depth: 400,
         seaLevel: 6,
         generator: (x, y, z) => {
-          const r = Math.sqrt((x - 128.5) ** 2 + ((y - 16.5) * 2) ** 2 + (z - 128.5) ** 2);
+          const r = Math.sqrt((x - 200.5) ** 2 + ((y - 16.5) * 2) ** 2 + (z - 200.5) ** 2);
           if (
             r > 32 && r < 64 && y < 16
           ) {
