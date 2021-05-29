@@ -8,6 +8,4 @@ class HelloWorldMultiplayer extends HelloWorld {
   }
 }
 
-HelloWorldMultiplayer.showInMenu = false;
-
 export default HelloWorldMultiplayer;
