@@ -4,10 +4,11 @@ import { Color } from 'three';
 class HelloWorld extends Gameplay {
   constructor(scene, options) {
     super(scene, {
-      lightToggle: true,
-      rainToggle: true,
+      audioStream: !!options.server,
       explosions: true,
       projectiles: true,
+      lightToggle: true,
+      rainToggle: true,
       dudes: {
         spawn: { count: 16 },
         onContact: (contact) => {
