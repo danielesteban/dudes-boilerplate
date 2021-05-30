@@ -105,7 +105,7 @@ class HelloWorld extends Gameplay {
         );
       }
       const isFiring = isXR ? (
-        hand && buttons.triggerDown
+        hand && buttons.primaryDown
       ) : (
         buttons.tertiaryDown
       );
